@@ -42,6 +42,19 @@ Use the built-in continuous integration in GitLab.
 - [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
 - [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
 
+Instruction on how to start the server:
+1. Clone the repository
+2. Open command line (terminal).
+Using command line:
+3. type "python --version" to check if you have python yet
+4. install flask by typing "pip install flask" (python server package)
+4. cd to the directory you cloned the repository
+5. type "python -m app" to start the localhost server. You can access the web app on http://127.0.0.1:5000
+To use Ngrok:
+6. start ngrok.exe
+7. type "ngrok http 5000"
+You will be able to reach your localhost on internet using the link Ngrok gives you
+
 ***
 
 # Editing this README
