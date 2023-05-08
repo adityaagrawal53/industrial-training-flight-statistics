@@ -42,7 +42,8 @@ Use the built-in continuous integration in GitLab.
 - [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
 - [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
 
-Instruction on how to start the server:
+## Instruction on how to start the server:
+
 1. Clone the repository
 2. Open command line (terminal).
 Using command line:
