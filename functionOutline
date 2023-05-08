@@ -1,0 +1,30 @@
+Pseudocode function outlines:
+
+def readInDatabase(db: database){
+	*parse data from database and make it usable*
+}
+
+def makeChart(db: database, flightName: String){
+	for(line <- database){
+		if(line.contains(flightName)){
+			*extract data from parts of database with flightName,
+			then produce chart/graph*
+}
+}
+
+*return/display graph*
+if(*input = “close” or “x out”*){
+	*close graph*
+}
+}
+
+def updateInfo(db: database){
+	*update info, not sure how this would be implemented, probably loop through database*
+}
+
+def main(){
+	*communicate with server and send info to be displayed on html side*
+	*update database*
+	*read input/mouseclicks to determine what info to show*
+	*display the specified info*
+}
