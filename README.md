@@ -1,6 +1,13 @@
 # Industrial Training Group 6
 
+Link for the flight map GitHub repository: https://github.com/zhangwengame/Python-Flight-Map
+Link for the OpenFlights website: https://openflights.org/data.html#airport
+Link for the OpenFlights Github: https://github.com/jpatokal/openflights
+Link for the OpenFlights Github (data): https://github.com/jpatokal/openflights/tree/master/data
 
+Use the airport database for the longitude and altitude coordinates!
+
+Use the route data database for the route information and stop over number!
 
 ## Getting started
 
