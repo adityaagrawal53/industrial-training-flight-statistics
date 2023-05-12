@@ -15,7 +15,7 @@ Example:**
 
 
 
-`**507**,"London Heathrow Airport","London","United Kingdom","LHR","EGLL",**51.4706**,**-0.461941**,83,0,"E",**"Europe/London"**,"airport","OurAirports"`
+**507**,"London Heathrow Airport","London","United Kingdom","LHR","EGLL",**51.4706**,**-0.461941**,83,0,"E",**"Europe/London"**,"airport","OurAirports"
 
 Use the following:
 
@@ -33,7 +33,8 @@ Index 11: Timezone. Can be used to determine the continent
 
 **Use the route data database for the route information, aircraft type and stop over number! Example:**
 
-`BA,1355,SIN,**3316**,LHR,**507**,,**0**,**744**`
+BA,1355,SIN,**3316**,LHR,**507**,,**0**,**744**
+> Hello
 
 Use the following:
 
