@@ -21,11 +21,11 @@ Use the following:
 
 Index 0: Airport ID
 
-Index 7: Latitude
+Index 6: Latitude
 
-Index 8: Longitude
+Index 7: Longitude
 
-Index 12: Timezone. Can be used to determine the continent 
+Index 11: Timezone. Can be used to determine the continent 
 
 
 
@@ -34,10 +34,15 @@ Index 12: Timezone. Can be used to determine the continent
 **Use the route data database for the route information, aircraft type and stop over number! Example:**
 
 BA,1355,SIN,**3316**,LHR,**507**,,**0**,**744**
+
 Use the following:
+
 Index 3: departure airport ID
+
 Index 5: arrival airport ID
+
 Index 7: number of stopovers
+
 Index 8: aircraft type
 
 
