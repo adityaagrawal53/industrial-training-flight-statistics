@@ -18,9 +18,9 @@ Use the following:
 
 Index 0: Airport ID
 
-Index 6: Latitude
+Index 7: Latitude
 
-Index 7: Longitude
+Index 8: Longitude
 
 Index 12: Timezone. Can be used to determine the continent 
 
