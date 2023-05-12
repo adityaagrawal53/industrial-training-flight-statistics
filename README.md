@@ -9,8 +9,11 @@ Link for the OpenFlights Github: https://github.com/jpatokal/openflights
 Link for the OpenFlights Github (data): https://github.com/jpatokal/openflights/tree/master/data
 
 
-Use the airport database for the longitude and altitude coordinates!
-Example:
+
+**Use the airport database for the longitude and altitude coordinates!
+Example:**
+
+
 
 **507**,"London Heathrow Airport","London","United Kingdom","LHR","EGLL",**51.4706**,**-0.461941**,83,0,"E",**"Europe/London"**,"airport","OurAirports"
 
@@ -28,7 +31,7 @@ Index 12: Timezone. Can be used to determine the continent
 
 
 
-Use the route data database for the route information and stop over number!
+**Use the route data database for the route information and stop over number!**
 
 # Instruction on how to start the server:
 1. Clone the repository
