@@ -10,7 +10,7 @@ Link for the OpenFlights Github (data): https://github.com/jpatokal/openflights/
 
 
 
-**Use the airport database for the longitude and altitude coordinates!
+**Use the airport database for the longitude, altitude and continent information!
 Example:**
 
 
