@@ -10,5 +10,9 @@ def index():
 def documentation():
    return render_template('documentation.html')
 
+@app.route('/survey.html')
+def survey():
+   return render_template('survey.html')
+
 if __name__ == '__main__':
   app.run(debug=True)
