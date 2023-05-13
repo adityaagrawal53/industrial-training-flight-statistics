@@ -6,11 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
     <link rel="stylesheet" href="../static/style.css">
   </head>
-  <body>
-    <h1 id="title">Lento-Kello</h1>
-    <p id="description">Flight database</p>
-    <a href="documentation.html">Documentation</a> 
-    <br/>
-    <a href="survey.html">Feedback</a>
+  <body>    
+    <nav id="navbar">
+      <header id="title" class="text-center">Lento-Kello: Flight database</header>      
+      <ul>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="survey.html">Feedback</a></li>
+      </ul>
+    </nav>      
+    <main id="main-doc">
+      <section id="Route_listing" class="main-section">
+        <header>Route listing</header>        
+        <form id="places_input" method="get">
+          <label for="place">Input a place to show all possible routes: </label>
+          <input name="place" id="place" type="text">   
+          <input type="submit" id="submit" value="Submit">   
+        </form>
+      </section>    
+    </main>
   </body>
 </html>

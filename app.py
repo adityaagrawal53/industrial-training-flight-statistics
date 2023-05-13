@@ -2,9 +2,9 @@ from flask import *
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    return render_template('index.html', place=request.form.get('place', 'Helsinki'))
 
 @app.route('/documentation.html')
 def documentation():
