@@ -2,14 +2,14 @@ from flask import *
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
     return render_template('index.html')
 
 @app.route('/flight_routing', methods=['GET', 'POST'])
 def flight_routing():
    if request.method == 'POST':
-      result = request.form
+      result = request.form     
       return render_template("flight_routing.html", result=result)
 
 @app.route('/documentation.html')
