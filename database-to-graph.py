@@ -101,6 +101,3 @@ def funk(d):
 
     fig.savefig('routes_map.png')
     plt.show()
-
-
-funk()
