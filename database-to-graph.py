@@ -8,7 +8,7 @@ from shapely.geometry import LineString
 
 # import cartopy.crs as ccrs
 
-def funk():
+def funk(d):
     # read airports
     airports = pd.read_csv("C:/Users/apoll/Documents/College Schoolwork/Industrial "
                            "Training/industrial-training-group-6/openflights/data/airports.dat", delimiter=',',
@@ -18,8 +18,8 @@ def funk():
 
     print(airports)
 
-    inp = input("Enter the name of a country: ")
-
+    # inp = input("Enter the name of a country: ")
+    inp = d["place"]
     # index = airports.index(inp)
     airport_filter = airports["country"] == inp
     airports2 = airports[airport_filter]
