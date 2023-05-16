@@ -1,7 +1,7 @@
 import geopandas as gpd
 import matplotlib.pyplot as plt
-import csv
-import numpy as np
+# import csv
+# import numpy as np
 import pandas as pd
 from shapely.geometry import LineString
 
@@ -10,8 +10,7 @@ from shapely.geometry import LineString
 
 def funk(d):
     # read airports
-    airports = pd.read_csv("C:/Users/apoll/Documents/College Schoolwork/Industrial "
-                           "Training/industrial-training-group-6/openflights/data/airports.dat", delimiter=',',
+    airports = pd.read_csv("/static/airports.dat", delimiter=',',
                            names=['id', 'name', 'city', 'country', 'iata',
                                   'icao', 'lat', 'long', 'altitude', 'timezone',
                                   'dst', 'tz', 'type', 'source'])
@@ -38,8 +37,7 @@ def funk(d):
 
     # read routes
 
-    routes = pd.read_csv("C:/Users/apoll/Documents/College Schoolwork/Industrial "
-                         "Training/industrial-training-group-6/openflights/data/routes.dat", delimiter=',',
+    routes = pd.read_csv("/static/routes.dat", delimiter=',',
                          names=['airline', 'id', 'source_airport', 'source_airport_id',
                                 'destination_airport', 'destination_airport_id', 'codeshare',
                                 'stops', 'equitment'])
