@@ -1,4 +1,6 @@
 from flask import *
+from database2graph import funk
+# import "database-to-graph.py"
 
 app = Flask(__name__)
 
@@ -9,7 +11,8 @@ def index():
 @app.route('/flight_routing', methods=['GET', 'POST'])
 def flight_routing():
    if request.method == 'POST':
-      result = request.form     
+      result = request.form   
+      funk(result)
       return render_template("flight_routing.html", result=result)
 
 @app.route('/documentation.html')
