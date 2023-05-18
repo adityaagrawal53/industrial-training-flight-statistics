@@ -26,3 +26,6 @@ routes_filter = routes["source_airport"] == "AER"
 routes2 = routes[routes_filter].groupby(["airline"])["airline"].count().sort_values(ascending=False)
 
 print(routes2)
+
+routes2.plot(kind="bar")
+plt.show()
