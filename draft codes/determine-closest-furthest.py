@@ -1,49 +1,44 @@
 
 from math import radians, degrees, sin, cos, asin, acos, sqrt
 
-# example data, random data from airports.dat file
+# input: source airport ID (int)
+# output: closest_city, furthest_city
+# closest_city = float, distance in kilometers
+# furthest_city = float, distance in kilometers
 
-# sample_data:
-# 1,"Goroka Airport","Goroka","Papua New Guinea","GKA","AYGA",-6.081689834590001,145.391998291,5282,10,"U","Pacific/Port_Moresby","airport","OurAirports"
-# 702,"Feringe Airport","Ljungby","Sweden",\N,"ESMG",56.9502983093,13.921699523900001,538,1,"E","Europe/Stockholm","airport","OurAirports"
-# 1906,"Florida Airport","Florida","Cuba",\N,"MUFL",21.49970054626465,-78.20279693603516,197,-5,"U","America/Havana","airport","OurAirports"
+def closest_furthest(source):
 
-# input: dictionary, where the key is the airport ID and the value is a list where first index is the latitude and second is the longitude
-# 212,"Boufarik Airport","Boufarik","Algeria",\N,"DAAK",36.545799,2.87611,335,1,"N","Africa/Algiers","airport","OurAirports"
+    latitudes = {}
+    longitudes = {}
 
+    with open('static/airports.dat','r') as f:
+        for line in f:
+            word = line.split(",")
+            latitudes[int(word[0])] = word[6]
+            longitudes[int(word[0])] = word[7]
 
-city = [212, [36.545799, 2.87611]]
-sample_data = {1: [-6.081689834590001, 145.391998291], 702: [56.9502983093, 13.921699523900001], 1906: [21.49970054626465, -78.20279693603516]}
-
-def closest_furthest(source, data):
-    # source city coordinates
-    source_ID = city[0]
-    source_coordinates = city[1]
-    source_latitude = source_coordinates[0]
-    source_longitude = source_coordinates[1]
-    #geopy_obj_source = (source_latitude, source_longitude)
-
-    closest_city = (1, great_circle(source_longitude, source_latitude, sample_data[1][1], sample_data[1][0]))
-    furthest_city = (1, great_circle(source_longitude, source_latitude, sample_data[1][1], sample_data[1][0]))
-
-    i = 2
-
-    for i in sample_data:
-        dest_ID = i
-        dest_coordinates = sample_data[i]
-        dest_latitude = dest_coordinates[0]
-        dest_longitude = dest_coordinates[1]
-        #geopy_obj_dest = (dest_latitude, dest_longitude)
-
-        # distance between two points
-        distance = great_circle(source_longitude, source_latitude, dest_longitude, dest_latitude)
-
-        if distance < closest_city[1]:
-            closest_city = (dest_ID, distance)
-        if distance > furthest_city[1]:
-            furthest_city = (dest_ID, distance)
+    source_latitude = float(latitudes[source])
+    source_longitude = float(longitudes[source])
     
-    return [closest_city, furthest_city]
+    closest_city = (1, great_circle(source_longitude, source_latitude, float(longitudes[1]), float(latitudes[1])))
+    furthest_city = (1, great_circle(source_longitude, source_latitude, float(longitudes[1]), float(latitudes[1])))
+
+    for i in range(1, 67663):
+        try:
+            if i == source:
+                pass
+            else:
+                distance = great_circle(source_longitude, source_latitude, float(longitudes[i]), float(latitudes[i]))
+                if distance < closest_city[1]:
+                    closest_city = (i, distance)
+                if distance > furthest_city[1]:
+                    furthest_city = (i, distance)
+        except KeyError:
+            pass
+        except ValueError:
+            pass
+    
+    return closest_city, furthest_city
 
     
 def great_circle(lon1, lat1, lon2, lat2):
@@ -52,8 +47,8 @@ def great_circle(lon1, lat1, lon2, lat2):
 
 
 if __name__ == '__main__':
-    closest_city, furthest_city = closest_furthest(city, sample_data)
-    print("Source city ID: {}".format(city[0]))
+    closest_city, furthest_city = closest_furthest(214)
+    print("Source city ID: {}".format(214))
     print("Closest city ID: {}, distance {} km".format(closest_city[0], closest_city[1]))
     print("Furthest city ID: {}, distance {} km".format(furthest_city[0], furthest_city[1]))
 
