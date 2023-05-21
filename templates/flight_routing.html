@@ -6,13 +6,16 @@
         <link rel="stylesheet" href="../static/style.css">
     </head>
     <body>
-        {% for key, value in result.items() %}
+        <!-- {% for key, value in result.items() %}
             <p>{{ key }}</p>
             <p>{{ value }}</p>
-        {% endfor %}
-        <div class="flexbox">
-            <img src="../static/Images/airports_map.png" alt="All airport in the specified country">
-            <img src="../static/Images/routes_map.png" alt="All routes possible from the airports in the specified country">
-        </div>        
+        {% endfor %} -->
+        <section id="flight_routing" class="main-section">
+            <header>Route listing</header> 
+            <div class="flexbox">
+                <img src="../static/Images/airports_map.png" alt="All airport in the specified country">
+                <img src="../static/Images/routes_map.png" alt="All routes possible from the airports in the specified country">
+            </div>        
+        </section>        
     </body>
 </html>

@@ -1,5 +1,6 @@
 from flask import *
 from database2graph import funk
+from determineClosestFurthest import closest_furthest
 # import "database-to-graph.py"
 
 app = Flask(__name__)
@@ -11,10 +12,21 @@ def index():
 @app.route('/flight_routing', methods=['GET', 'POST'])
 def flight_routing():
    if request.method == 'POST':
-      result = request.form   
+      result = request.form         
       funk(result)
       return render_template("flight_routing.html", result=result)
-
+   
+@app.route('/furthest_closest', methods=['GET', 'POST'])
+def furthest_closest():
+   if request.method == 'POST':
+      closest, furthest = closest_furthest(int(request.form["id"]))
+      closest_id = closest[0]
+      closest_d = closest[1]
+      furthest_id = furthest[0]
+      furthest_d = furthest[1]
+      return render_template("furthest_closest.html", source=request.form["id"], closest_id=closest_id, closest_d=closest_d,
+                             furthest_d=furthest_d, furthest_id=furthest_id)
+   
 @app.route('/documentation.html')
 def documentation():
    return render_template('documentation.html')

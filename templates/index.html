@@ -17,12 +17,20 @@
     <main id="main-doc">
       <section id="Route_listing" class="main-section">
         <header>Route listing</header>        
-        <form action="/flight_routing" id="places_input" method="POST">
+        <form action="/flight_routing" id="place_input" method="POST">
           <label for="place">Input a place to show all possible routes: </label>
           <input name="place" id="place" type="text">   
           <input type="submit" id="submit" value="Submit">   
         </form>
-      </section>    
+      </section>   
+      <section id="furthest_closest" class="main-section">
+        <header>Furthest & Closest city to the airport</header>        
+        <form action="/furthest_closest" id="id_input" method="POST">
+          <label for="id">Input airport ID: </label>
+          <input name="id" id="id" type="number">   
+          <input type="submit" id="submit" value="Submit">   
+        </form>
+      </section>       
     </main>
   </body>
 </html>
