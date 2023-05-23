@@ -44,7 +44,6 @@ def find_continent(source_city):
                 # filter2 = row2['iata'] == airport_code
                 destination_airport = row2[row2['iata'] == airport_code]
                 print("Destination airport: ", destination_airport)
-                print("Destination airport:", destination_airport)
                 for index3, row3 in continents.iterrows():
                     if row3['country'] == destination_airport['country']:
                         continent = row3['continent']
