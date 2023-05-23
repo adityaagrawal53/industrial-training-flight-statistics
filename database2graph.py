@@ -18,7 +18,7 @@ def funk(d):
     print(airports)
 
 #     inp = input("Enter the name of a country: ")
-    inp = d["place"]
+    inp = d
 #     index = airports.index(inp)
     airport_filter = airports["country"] == inp
     airports2 = airports[airport_filter]
