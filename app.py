@@ -1,6 +1,6 @@
 from flask import *
-from database2graph import funk
-from determineClosestFurthest import closest_furthest
+from staaps_listing_and_routing import funk
+from closest_furthest_cities import closest_furthest
 # import "database-to-graph.py"
 
 app = Flask(__name__)
