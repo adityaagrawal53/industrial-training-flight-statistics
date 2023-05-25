@@ -1,7 +1,7 @@
 import geopandas as gpd
 import matplotlib.pyplot as plt
-# import csv
-# import numpy as np
+import csv
+import numpy as np
 import pandas as pd
 from shapely.geometry import LineString
 
@@ -10,34 +10,37 @@ from shapely.geometry import LineString
 
 def funk(d):
     # read airports
-    airports = pd.read_csv("/static/airports.dat", delimiter=',',
+    airports = pd.read_csv("../static/airports.dat", delimiter=',',
                            names=['id', 'name', 'city', 'country', 'iata',
                                   'icao', 'lat', 'long', 'altitude', 'timezone',
                                   'dst', 'tz', 'type', 'source'])
 
     print(airports)
 
-    # inp = input("Enter the name of a country: ")
+#     inp = input("Enter the name of a country: ")
     inp = d["place"]
-    # index = airports.index(inp)
+#     index = airports.index(inp)
     airport_filter = airports["country"] == inp
     airports2 = airports[airport_filter]
 
-    fig, ax = plt.subplots(facecolor='#202A44')
-    fig.set_size_inches(12, 6)
+    img = plt.imread('openflights/data/map-2048.png')
+
+    fig, ax = plt.subplots()
+    ax.imshow(img)
+    fig.set_size_inches(12,6)
 
     ax.scatter(airports['long'], airports['lat'], s=1.2, alpha=1, edgecolors='none')
-    ax.scatter(airports2['long'], airports2['lat'], s=0.5, alpha=1, edgecolors='#FF0000')
+    ax.scatter(airports2['long'], airports2['lat'], s=0.5, alpha=1, edgecolors='none')
 
     ax.axis('off')
 
-    fig.savefig('airports_map.png')
+    fig.savefig('static/images/airports_map.png')
 
     plt.show()
 
     # read routes
 
-    routes = pd.read_csv("/static/routes.dat", delimiter=',',
+    routes = pd.read_csv("../static/routes.dat", delimiter=',',
                          names=['airline', 'id', 'source_airport', 'source_airport_id',
                                 'destination_airport', 'destination_airport_id', 'codeshare',
                                 'stops', 'equitment'])
@@ -97,5 +100,10 @@ def funk(d):
     plt.setp(ax.spines.values(), color='black')
     plt.setp([ax.get_xticklines(), ax.get_yticklines()], color='black')
 
-    fig.savefig('routes_map.png')
-    plt.show()
+    fig.savefig('static/images/routes_map.png')
+
+
+
+dictionary = {"place": "Japan"}
+
+funk(dictionary)

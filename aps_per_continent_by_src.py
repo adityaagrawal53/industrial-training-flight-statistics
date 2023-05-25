@@ -1,6 +1,6 @@
 from math import radians, degrees, sin, cos, asin, acos, sqrt
 import pandas as pd
-
+import matplotlib.pyplot as plt
 
 # input: source airport ID (int)
 # output: closest_city, furthest_city
@@ -62,6 +62,16 @@ def find_continent(source_city):
     print(asia_sum)
     print(africa_sum)
     print(oceania_sum)
+
+    continent_sums = [north_america_sum, south_america_sum, europe_sum, asia_sum, africa_sum, oceania_sum]
+    x_axis = ['N. America', 'S. America', 'Europe', 'Asia', 'Africa', 'Oceania']
+
+    colors = ['red', 'green', 'blue', 'purple', 'brown', 'teal']
+    plt.bar(x_axis, continent_sums, color=colors)
+    plt.title("Number of flight destinations in each continent:")
+    plt.xlabel("Continent")
+    plt.ylabel("Number of destinations")
+    plt.show()
 
 
 find_continent("Madrid")
