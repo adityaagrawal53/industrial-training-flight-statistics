@@ -67,10 +67,13 @@ def find_continent(source_city):
     x_axis = ['N. America', 'S. America', 'Europe', 'Asia', 'Africa', 'Oceania']
 
     colors = ['red', 'green', 'blue', 'purple', 'brown', 'teal']
+    fig, ax = plt.subplots(figsize=(12,6))
     plt.bar(x_axis, continent_sums, color=colors)
     plt.title("Number of flight destinations in each continent:")
     plt.xlabel("Continent")
-    plt.ylabel("Number of destinations")    
+    plt.ylabel("Number of destinations")
+
+    fig.savefig("static/Images/destination_bar_graph.png")
     plt.show()
 
 
