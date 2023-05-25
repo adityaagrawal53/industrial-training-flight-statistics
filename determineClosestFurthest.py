@@ -11,7 +11,7 @@ def closest_furthest(source):
     latitudes = {}
     longitudes = {}
 
-    with open('static/airports.dat','r', encoding="utf-8") as f:
+    with open('static/database/airports.dat','r', encoding="utf-8") as f:
         for line in f:
             word = line.split(",")
             latitudes[int(word[0])] = word[6]

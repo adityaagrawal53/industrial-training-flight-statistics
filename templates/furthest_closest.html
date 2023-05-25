@@ -6,13 +6,24 @@
         <link rel="stylesheet" href="../static/style.css">
     </head>
     <body>    
-        <section id="furthest_closest" class="main-section">
-            <header>Furthest & Closest city to the airport</header>
-            <div class="">
-                <h5>Source city ID: {{source}}</h5>                
-                <h5>Closest city ID: {{closest_id}}, distance: {{closest_d}} km</h5>
-                <h5>Furthest city ID: {{furthest_id}}, distance: {{furthest_d}} km</h5>
-            </div>
-        </section> 
+        <nav id="navbar">      
+            <img src="../static/Images/lento-kello_combined.png" alt="" class="logo-img"> 
+            <header id="title" class="text-center">Flight database</header>     
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/documentation.html">Documentation</a></li>
+                <li><a href="/survey.html">Feedback</a></li>
+            </ul>
+        </nav>  
+        <main id="main-doc">
+            <section id="furthest_closest" class="main-section">
+                <header>Furthest & Closest city to {{source}}</header>
+                <div class="">
+                    <p>Source city ID: {{source}}</p>                
+                    <p>Closest city ID: {{closest_id}}, distance: {{closest_d}} km</p>
+                    <p>Furthest city ID: {{furthest_id}}, distance: {{furthest_d}} km</p>
+                </div>
+            </section> 
+        </main>
     </body>
 </html>

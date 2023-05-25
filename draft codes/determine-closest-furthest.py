@@ -40,6 +40,7 @@ def closest_furthest(source):
     
     return closest_city, furthest_city
 
+
     
 def great_circle(lon1, lat1, lon2, lat2):
     lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])

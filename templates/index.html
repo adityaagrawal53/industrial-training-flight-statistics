@@ -5,32 +5,84 @@
     <meta charset="UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
     <link rel="stylesheet" href="../static/style.css">
+    <link rel ="icon" href ="../static/Images/lento-kello_logo.png" type = "image/x-icon">
   </head>
   <body>    
-    <nav id="navbar">
-      <header id="title" class="text-center">Lento-Kello: Flight database</header>      
+    <nav id="navbar">      
+      <img src="../static/Images/lento-kello_combined.png" alt="" class="logo-img"> 
+      <header id="title" class="text-center">Flight database</header>     
       <ul>
+        <li><a href="index.html">Home</a></li>
         <li><a href="documentation.html">Documentation</a></li>
         <li><a href="survey.html">Feedback</a></li>
       </ul>
     </nav>      
-    <main id="main-doc">
+    <main id="main-doc">      
+      <section id="flight" class="main-section">
+        <header>Flight information</header>
+        <form action="/flight_info" id="flight_input" method="POST">
+          <fieldset>
+          <label for="source">From: </label>
+          <input type="text" name="source" id="source">
+          </fieldset>
+          <fieldset>
+          <label for="dest">To: </label>
+          <input type="text" name="dest" id="dest">
+          </fieldset>
+          <fieldset>
+          <label for="date">Date: </label>
+          <input type="date" name="date" id="date">
+          </fieldset>
+          <fieldset>
+          <label for="time">Time: </label>
+          <input type="time">
+          </fieldset>
+          <fieldset>
+          <label for="domes_inter"></label>
+          <input type="radio" name="domes_inter" id="domes_inter">Domestic
+          <input type="radio" name="domes_inter" id="domes_inter">International
+          </fieldset>
+          <fieldset>
+            <label for="stop_no">Number of stop(s): </label>
+            <input type="number" name="stop_no" id="stop_no">
+          </fieldset>
+          <fieldset>
+            <label for="aircraft">Aircraft size: </label>
+            <select name="aircraft" id="aircraft">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large_commuter">Large Commuter</option>
+              <option value="large_jet">Large Jet</option>
+              <option value="b757">B757</option>
+              <option value="heavy">Heavy</option>
+            </select>
+          </fieldset>
+          <fieldset>
+          <input type="submit" id="submit" value="Submit">  
+          </fieldset>
+        </form>
+      </section>   
+      <h2 class="text-center">Statistics</h2>  
       <section id="Route_listing" class="main-section">
         <header>Route listing</header>        
-        <form action="/flight_routing" id="place_input" method="POST">
-          <label for="place">Input a place to show all possible routes: </label>
-          <input name="place" id="place" type="text">   
+        <form action="/flight_routing" id="country_input" method="GET">
+          <fieldset>
+          <label for="country">Input a country to show all possible routes: </label>
+          <input name="country" id="country" type="text">   
           <input type="submit" id="submit" value="Submit">   
+          </fieldset>
         </form>
       </section>   
       <section id="furthest_closest" class="main-section">
         <header>Furthest & Closest city to the airport</header>        
-        <form action="/furthest_closest" id="id_input" method="POST">
+        <form action="/furthest_closest" id="id_input" method="GET">
+          <fieldset>
           <label for="id">Input airport ID: </label>
           <input name="id" id="id" type="number">   
           <input type="submit" id="submit" value="Submit">   
+          </fieldset>
         </form>
-      </section>       
+      </section>  
     </main>
   </body>
 </html>
