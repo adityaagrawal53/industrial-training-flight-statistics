@@ -35,44 +35,49 @@ def find_continent(source_city):
 
     airport_code = ""
     destination_airport = ""
+
+    print("Now computing destination airports, this might take a while...")
     for _, route in routes.iterrows():
 
         for _, source_airport in source_airports.iterrows():
             # print("Source airport at this route:", route['source_airport'])
 
             if route['source_airport'] == source_airport['iata']:
-                print("Found a match!")
+                # print("Found matching source airports!")
                 airport_code = route['destination_airport']
-                print("Airport code: ", airport_code)
+                # print("Airport code: ", airport_code)
 
                 for _, airport in airports.iterrows():
+                    # print("Comparison between destination and airport name: ", airport_code, airport['iata'])
+                    # filter2 = airport['iata'] == airport_code
+                    # filter2 = airport['iata'].__contains__(airport_code)
+                    if airport_code == airport['iata']:
+                        destination_airport = airport
+                        # print("Destination airport: ", destination_airport)
+                        for _, continent in continents.iterrows():
+                            if continent['country'] == destination_airport['country']:
+                                continent = continent['continent']
 
-                    filter2 = airport['iata'] == airport_code
-                    destination_airport = airport[filter2]
-                    print("Destination airport: ", destination_airport)
-                    for _, continent in continents.iterrows():
-                        if continent['country'] == destination_airport['country']:
-                            continent = continent['continent']
+                                if continent == "North America":
+                                    north_america_sum += 1
+                                elif continent == 'South America':
+                                    south_america_sum += 1
+                                elif continent == 'Europe':
+                                    europe_sum += 1
+                                elif continent == "Asia":
+                                    asia_sum += 1
+                                elif continent == "Africa":
+                                    africa_sum += 1
+                                elif continent == "Oceania":
+                                    oceania_sum += 1
 
-                            if continent == "North America":
-                                north_america_sum += 1
-                            elif continent == 'South America':
-                                south_america_sum += 1
-                            elif continent == 'Europe':
-                                europe_sum += 1
-                            elif continent == "Asia":
-                                asia_sum += 1
-                            elif continent == "Africa":
-                                africa_sum += 1
-                            elif continent == "Oceania":
-                                oceania_sum += 1
-
-    print(north_america_sum)
-    print(south_america_sum)
-    print(europe_sum)
-    print(asia_sum)
-    print(africa_sum)
-    print(oceania_sum)
+    print("Number of destination airports in each continent: ")
+    print("North America: ", north_america_sum)
+    print("South America: ", south_america_sum)
+    print("Europe: ", europe_sum)
+    print("Asia: ", asia_sum)
+    print("Africa: ", africa_sum)
+    print("Oceania: ", oceania_sum)
 
 
 find_continent("Berlin")
