@@ -69,12 +69,21 @@ def find_continent(source_city):
     colors = ['red', 'green', 'blue', 'purple', 'brown', 'teal']
     fig, ax = plt.subplots(figsize=(12,6))
     plt.bar(x_axis, continent_sums, color=colors)
+
+    # function to add value labels
+    def addlabels(x,y):
+        for i in range(len(x)):
+            plt.text(i, y[i], y[i], ha = 'center')
+            
+    # calling the function to add value labels
+    addlabels(x_axis, continent_sums)
+
     plt.title("Number of flight destinations in each continent:")
     plt.xlabel("Continent")
     plt.ylabel("Number of destinations")
 
     fig.savefig("static/Images/destination_bar_graph.png")
-    plt.show()
+    # plt.show()
 
 
 # find_continent("Madrid")
