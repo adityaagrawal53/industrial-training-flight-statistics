@@ -35,24 +35,24 @@ def find_continent(source_city):
 
     airport_code = ""
     destination_airport = ""
-    for index, row in routes.iterrows():
+    for _, route in routes.iterrows():
 
-        for index2, row2 in source_airports.iterrows():
-            # print("Source airport at this row:", row['source_airport'])
+        for _, source_airport in source_airports.iterrows():
+            # print("Source airport at this route:", route['source_airport'])
 
-            if row['source_airport'] == row2['iata']:
+            if route['source_airport'] == source_airport['iata']:
                 print("Found a match!")
-                airport_code = row['destination_airport']
+                airport_code = route['destination_airport']
                 print("Airport code: ", airport_code)
 
-                for index3, row3 in airports.iterrows():
+                for _, airport in airports.iterrows():
 
-                    filter2 = row3['iata'] == airport_code
-                    destination_airport = row3[filter2]
+                    filter2 = airport['iata'] == airport_code
+                    destination_airport = airport[filter2]
                     print("Destination airport: ", destination_airport)
-                    for index4, row4 in continents.iterrows():
-                        if row4['country'] == destination_airport['country']:
-                            continent = row4['continent']
+                    for _, continent in continents.iterrows():
+                        if continent['country'] == destination_airport['country']:
+                            continent = continent['continent']
 
                             if continent == "North America":
                                 north_america_sum += 1
