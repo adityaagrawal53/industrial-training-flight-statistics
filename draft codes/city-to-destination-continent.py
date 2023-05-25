@@ -70,6 +70,7 @@ def find_continent(source_city):
                                     africa_sum += 1
                                 elif continent == "Oceania":
                                     oceania_sum += 1
+                        break
 
     print("Number of destination airports in each continent: ")
     print("North America: ", north_america_sum)
@@ -80,4 +81,4 @@ def find_continent(source_city):
     print("Oceania: ", oceania_sum)
 
 
-find_continent("Berlin")
+find_continent("Madrid")
