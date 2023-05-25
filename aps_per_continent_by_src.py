@@ -70,8 +70,8 @@ def find_continent(source_city):
     plt.bar(x_axis, continent_sums, color=colors)
     plt.title("Number of flight destinations in each continent:")
     plt.xlabel("Continent")
-    plt.ylabel("Number of destinations")
+    plt.ylabel("Number of destinations")    
     plt.show()
 
 
-find_continent("Madrid")
+# find_continent("Madrid")

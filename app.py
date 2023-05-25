@@ -1,6 +1,7 @@
 from flask import *
 from aps_listing_and_routing import funk
 from closest_furthest_cities import closest_furthest
+from aps_per_continent_by_src import find_continent
 # import "database-to-graph.py"
 
 app = Flask(__name__)
@@ -42,6 +43,16 @@ def documentation():
 @app.route('/survey.html')
 def survey():
    return render_template('survey.html')
+
+@app.route('/aps_per_continent_by_src', methods=['GET'])
+def redirect_aps_per_continent_by_src():
+   source_city = request.args.get('source_city')
+   return redirect(url_for('aps_per_continent_by_src', source_city = source_city))
+
+@app.route('/aps_per_continent_by_src/<source_city>')
+def aps_per_continent_by_src(source_city):
+   find_continent(source_city)
+   return render_template('aps_per_continent_by_src.html', source_city=source_city)
 
 if __name__ == '__main__':
   app.run(debug=True)
