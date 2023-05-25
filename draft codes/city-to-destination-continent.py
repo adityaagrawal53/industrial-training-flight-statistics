@@ -33,33 +33,39 @@ def find_continent(source_city):
     oceania_sum = 0
     # loop through the dataframe:
 
-    for index, row in routes.iterrows():
-        for index2, row2 in source_airports.iterrows():
-            # print("Source airport at this row:", row['source_airport'])
+    airport_code = ""
+    destination_airport = ""
+    for _, route in routes.iterrows():
 
-            if row['source_airport'] == row2['iata']:
+        for _, source_airport in source_airports.iterrows():
+            # print("Source airport at this route:", route['source_airport'])
+
+            if route['source_airport'] == source_airport['iata']:
                 print("Found a match!")
-                airport_code = row['destination_airport']
+                airport_code = route['destination_airport']
                 print("Airport code: ", airport_code)
-                # filter2 = row2['iata'] == airport_code
-                destination_airport = row2[row2['iata'] == airport_code]
-                print("Destination airport: ", destination_airport)
-                for index3, row3 in continents.iterrows():
-                    if row3['country'] == destination_airport['country']:
-                        continent = row3['continent']
 
-                        if continent == "North America":
-                            north_america_sum += 1
-                        elif continent == 'South America':
-                            south_america_sum += 1
-                        elif continent == 'Europe':
-                            europe_sum += 1
-                        elif continent == "Asia":
-                            asia_sum += 1
-                        elif continent == "Africa":
-                            africa_sum += 1
-                        elif continent == "Oceania":
-                            oceania_sum += 1
+                for _, airport in airports.iterrows():
+
+                    filter2 = airport['iata'] == airport_code
+                    destination_airport = airport[filter2]
+                    print("Destination airport: ", destination_airport)
+                    for _, continent in continents.iterrows():
+                        if continent['country'] == destination_airport['country']:
+                            continent = continent['continent']
+
+                            if continent == "North America":
+                                north_america_sum += 1
+                            elif continent == 'South America':
+                                south_america_sum += 1
+                            elif continent == 'Europe':
+                                europe_sum += 1
+                            elif continent == "Asia":
+                                asia_sum += 1
+                            elif continent == "Africa":
+                                africa_sum += 1
+                            elif continent == "Oceania":
+                                oceania_sum += 1
 
     print(north_america_sum)
     print(south_america_sum)
