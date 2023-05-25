@@ -71,6 +71,7 @@ def find_continent(source_city):
     plt.title("Number of flight destinations in each continent:")
     plt.xlabel("Continent")
     plt.ylabel("Number of destinations")
+    plt.rcParams["figure.figsize"] = (10, 5)
     plt.show()
 
 
