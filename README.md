@@ -22,7 +22,7 @@ Furthest city: (ID), distance (distance) kilometeres.
 The code determines the closest and furthest airport to the given source airport by first taking the first airport from the database, taking its longitude and latitude, calculating the distance between that and the source airport and making that distance as the base closest and furthest airport. After that the code goes line by line through the database (has about 6500 airports) and comparares each airport's distance to the base closest and furthest airport. The distance is calculated using great circle method that is precise enough for this application.
 
 
-
+# The syntax
 **Use the airport database for the longitude, altitude and continent information!
 Example:**
 
