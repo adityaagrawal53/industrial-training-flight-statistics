@@ -9,7 +9,7 @@ Link for the OpenFlights Github: https://github.com/jpatokal/openflights
 Link for the OpenFlights Github (data): https://github.com/jpatokal/openflights/tree/master/data
 
 
-# Determine-closest-furthest
+# Determine-closest-furthest.py
 
 The python code determines the closest and furthest airport to the given airport.
 The input is the source airport's unique OpenFlights ID.
@@ -21,6 +21,19 @@ Furthest city: (ID), distance (distance) kilometeres.
 
 The code determines the closest and furthest airport to the given source airport by first taking the first airport from the database, taking its longitude and latitude, calculating the distance between that and the source airport and making that distance as the base closest and furthest airport. After that the code goes line by line through the database (has about 6500 airports) and comparares each airport's distance to the base closest and furthest airport. The distance is calculated using great circle method that is precise enough for this application.
 
+# Mapping.py
+# Database-to-graph.py
+# Counting.py
+
+A python code that outputs all the airlines that depart from the given input source airport.
+The input is the source airport's IATA code. 
+The output is a bar graph that has all the airlines that depart from the source airport. The more departures a specific airline has, the higher the bar in the graph.
+
+Pandas extension: helps to read databases in a convenient way.
+MatPlotLib extension: used to plot the graph
+
+
+# City-to-destination.py
 
 # The syntax
 **Use the airport database for the longitude, altitude and continent information!
