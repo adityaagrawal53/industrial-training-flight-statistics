@@ -13,7 +13,7 @@ Link for the OpenFlights Github (data): https://github.com/jpatokal/openflights/
 
 The python code determines the closest and furthest airport to the given airport.
 The input is the source airport's unique OpenFlights ID.
-The output is the following string:
+The output:
 
 Source ID: (ID)
 Closest city: (ID), distance (distance) kilometeres.
@@ -23,6 +23,7 @@ The code determines the closest and furthest airport to the given source airport
 
 # Mapping.py
 # Database-to-graph.py
+
 # Counting.py
 
 A python code that outputs all the airlines that depart from the given input source airport.
@@ -34,6 +35,24 @@ MatPlotLib extension: used to plot the graph
 
 
 # City-to-destination.py
+
+A python code that outputs how many destinations a given source airport has to different continents.
+The input is the source airport's IATA code.
+The output:
+
+Number of destination airports in each continent: 
+North America: (int)
+South America: (int)
+Europe: (int)
+Asia: (int)
+Africa: (int)
+Oceania: (int)
+
+The code read data from airport.dat, routes.dat and Countries-Continents.csv.
+It determines all the destinations from the source code, determies all the continents for each of those destinations (by determining the country from the airport.dat and finding the continent pair from Countries-Continents.csv) and sums up all the occurances of each continent into a designated variable.
+
+Pandas extension: helps to read databases in a convenient way.
+
 
 # The syntax
 **Use the airport database for the longitude, altitude and continent information!
