@@ -24,7 +24,9 @@ def filter_and_count(source_airport):
        routes2 = routes[routes_filter].groupby(["airline"])["airline"].count().sort_values(ascending=False)
 
        routes2.plot(kind="bar")
-       plt.show()
+
+       #Save as image
+       plt.savefig('static/images/airport_count.png')
 
 #Example:
 #filter_and_count("AER")
