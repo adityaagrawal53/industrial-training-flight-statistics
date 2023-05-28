@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body>
+        <nav id="navbar">      
+            <img src="../static/Images/lento-kello_combined.png" alt="" class="logo-img"> 
+            <header id="title" class="text-center">Route listing</header>     
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="survey.html">Feedback</a></li>
+            </ul>
+          </nav>  
+          <main id="main-doc">
+            <section id="flight_routing" class="main-section">                
+                <div class="">
+                    <h2 class="text-center">All active airports in {{country}}</h2>
+                    <img class="flexbox" src="../static/Images/airports_map.png" alt="All airport in the specified country">
+                    <h2 class="text-center">All possible routes from {{country}}</h2>
+                    <img class="flexbox" src="../static/Images/routes_map.png" alt="All routes possible from the airports in the specified country">
+                </div>        
+            </section>        
+        </main>
+    </body>
+</html>
