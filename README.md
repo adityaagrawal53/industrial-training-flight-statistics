@@ -1,4 +1,4 @@
-# Industrial Training Group 6
+# Industrial Training Group 2
 
 Link for the flight map GitHub repository: https://github.com/zhangwengame/Python-Flight-Map
 
@@ -25,7 +25,11 @@ Furthest city: (ID), distance (distance) kilometeres.
 The code determines the closest and furthest airport to the given source airport by first taking the first airport from the database, taking its longitude and latitude, calculating the distance between that and the source airport and making that distance as the base closest and furthest airport. After that the code goes line by line through the database (has about 6500 airports) and comparares each airport's distance to the base closest and furthest airport. The distance is calculated using great circle method that is precise enough for this application.
 
 # Mapping.py
-# Database-to-graph.py
+
+# database2graph.py
+This file defines a function that reads in two databases (airports.dat and routes.dat) as pandas dataframes, and then filters their contents based on user input. The user inputs the name of a city, and the function then filters the airports database to only contain airports in the given city, and the routes database to only contain routes in which the source airports are located in the given city.
+
+The function then outputs two images: one contains a map of all the airports in the database in blue with the airports in the given city appearing in red, and the other image contains a world map with route lines from the source city in red.  The files are named airports_map.png and routes_map.png, and are sent to the website via an HTML POST request from app.py.
 
 # Counting.py
 
@@ -44,7 +48,7 @@ MatPlotLib extension: used to plot the graph
 
 A python code that outputs how many destinations a given source airport has to different continents.
 
-The input is the source airport's IATA code.
+The input is the source airport's city.
 
 The output:
 
