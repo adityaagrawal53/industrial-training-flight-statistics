@@ -2,7 +2,8 @@ from flask import *
 from aps_listing_and_routing import funk
 from closest_furthest_cities import closest_furthest
 from aps_per_continent_by_src import find_continent
-# import "database-to-graph.py"
+from counting import filter_and_count
+from mapping import filter_and_map
 
 app = Flask(__name__)
 
@@ -48,11 +49,28 @@ def survey():
 def redirect_aps_per_continent_by_src():
    source_city = request.args.get('source_city')
    return redirect(url_for('aps_per_continent_by_src', source_city = source_city))
-
 @app.route('/aps_per_continent_by_src/<source_city>')
 def aps_per_continent_by_src(source_city):
    find_continent(source_city)
    return render_template('aps_per_continent_by_src.html', source_city=source_city)
+
+@app.route('/counting', methods=['GET'])
+def redirect_counting():
+   source_ap = request.args.get('source_ap')
+   return redirect(url_for('counting', source_city=source_ap))
+@app.route('/countring/<source_ap>')
+def counting(source_ap):
+   filter_and_count(source_ap)
+   return render_template('counting.html', source_ap=source_ap)
+
+@app.route('/mapping', methods=['GET'])
+def redirect_mapping():
+   country = request.args.get('country')
+   return redirect(url_for('mapping', country=country))
+@app.route('/mapping/<country>')
+def mapping(country):
+   filter_and_map(country)
+   return render_template('mapping.html', country=country)
 
 if __name__ == '__main__':
   app.run(debug=True)
