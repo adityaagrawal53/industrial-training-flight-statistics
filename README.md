@@ -1,4 +1,4 @@
-# Industrial Training Group 6
+# Industrial Training Group 2
 
 Link for the flight map GitHub repository: https://github.com/zhangwengame/Python-Flight-Map
 
@@ -9,7 +9,65 @@ Link for the OpenFlights Github: https://github.com/jpatokal/openflights
 Link for the OpenFlights Github (data): https://github.com/jpatokal/openflights/tree/master/data
 
 
+# Determine-closest-furthest.py
 
+The python code determines the closest and furthest airport to the given airport.
+
+The input is the source airport's unique OpenFlights ID.
+
+The output:
+
+
+Source ID: (ID)
+Closest city: (ID), distance (distance) kilometeres.
+Furthest city: (ID), distance (distance) kilometeres.
+
+The code determines the closest and furthest airport to the given source airport by first taking the first airport from the database, taking its longitude and latitude, calculating the distance between that and the source airport and making that distance as the base closest and furthest airport. After that the code goes line by line through the database (has about 6500 airports) and comparares each airport's distance to the base closest and furthest airport. The distance is calculated using great circle method that is precise enough for this application.
+
+# Mapping.py
+
+# database2graph.py
+This file defines a function that reads in two databases (airports.dat and routes.dat) as pandas dataframes, and then filters their contents based on user input. The user inputs the name of a city, and the function then filters the airports database to only contain airports in the given city, and the routes database to only contain routes in which the source airports are located in the given city.
+
+The function then outputs two images: one contains a map of all the airports in the database in blue with the airports in the given city appearing in red, and the other image contains a world map with route lines from the source city in red.  The files are named airports_map.png and routes_map.png, and are sent to the website via an HTML POST request from app.py.
+
+# Counting.py
+
+A python code that outputs all the airlines that depart from the given input source airport.
+
+The input is the source airport's IATA code. 
+
+The output is a bar graph that has all the airlines that depart from the source airport. The more departures a specific airline has, the higher the bar in the graph.
+
+
+Pandas extension: helps to read databases in a convenient way.
+MatPlotLib extension: used to plot the graph
+
+
+# City-to-destination.py
+
+A python code that outputs how many destinations a given source airport has to different continents.
+
+The input is the source airport's city.
+
+The output:
+
+
+Number of destination airports in each continent: 
+North America: (int)
+South America: (int)
+Europe: (int)
+Asia: (int)
+Africa: (int)
+Oceania: (int)
+
+The code read data from airport.dat, routes.dat and Countries-Continents.csv.
+It determines all the destinations from the source code, determies all the continents for each of those destinations (by determining the country from the airport.dat and finding the continent pair from Countries-Continents.csv) and sums up all the occurances of each continent into a designated variable.
+
+Pandas extension: helps to read databases in a convenient way.
+
+
+# The syntax
 **Use the airport database for the longitude, altitude and continent information!
 Example:**
 
@@ -60,39 +118,9 @@ You will be able to reach your localhost on internet using the link Ngrok gives 
 
 
 
-## Add your files
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
 
-```
-cd existing_repo
-git remote add origin https://version.aalto.fi/gitlab/ailusa1/industrial-training-group-6.git
-git branch -M main
-git push -uf origin main
-```
 
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://version.aalto.fi/gitlab/ailusa1/industrial-training-group-6/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
 
 
 
