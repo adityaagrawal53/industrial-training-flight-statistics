@@ -45,8 +45,9 @@ def filter_and_map(d):
        plt.setp(ax.spines.values(), color='black')
        plt.setp([ax.get_xticklines(), ax.get_yticklines()], color='black')
        ax.set_ylim(-7000000, 8800000)
-
-       plt.show()
+       
+       # Save as image
+       fig.savefig('static/images/filtered_routes_map.png')
 
 # Example:
 #filter_and_map("MSQ")
