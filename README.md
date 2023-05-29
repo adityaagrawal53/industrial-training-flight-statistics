@@ -27,7 +27,7 @@ You will be able to reach your localhost on internet using the link Ngrok gives 
 The goal of this project was to make a website that takes a user input and outputs graphs and data about flight route data, airlines, destination continents, closest and furthest airport. Mainly Python and HTML was used in this project. Python was used to handle the data and backend, and HTML to outline the website appearance and frontend.
 
 
-In an nutshell the repository does the following:
+**In an nutshell the repository does the following:**
 
 1. ngrok.exe starts a local host server that can be accessed with an IPv4 adddress
 2. html files in the templates folder handle the visual appearance of the URL website
