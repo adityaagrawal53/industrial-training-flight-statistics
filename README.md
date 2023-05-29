@@ -9,9 +9,51 @@ Link for the OpenFlights Github: https://github.com/jpatokal/openflights
 Link for the OpenFlights Github (data): https://github.com/jpatokal/openflights/tree/master/data
 
 
-# Determine-closest-furthest.py
+# Instruction on how to start the server:
+1. Clone the repository
+2. Open command line (terminal).
+Using command line:
+3. type "python --version" to check if you have python yet
+4. install flask by typing "pip install flask" (python server package)
+4. cd to the directory you cloned the repository
+5. type "python -m app" to start the localhost server. You can access the web app on http://127.0.0.1:5000
+To use Ngrok:
+6. start ngrok.exe
+7. type "ngrok http 5000"
+You will be able to reach your localhost on internet using the link Ngrok gives you
 
-The python code determines the closest and furthest airport to the given airport.
+# app.py
+The file combines the listing and routing of different files and html domain names. 
+
+It uses flask to make a micronetwork.
+
+It imports closest_furthest_cities.py, aps_listing_and_routing, aps_per_continent_by_src.py and counting.py to output the desired pictures / strings made by those files.
+
+# database2graph.py / aps_listing_and_routing
+
+This file defines a function that reads in two databases (airports.dat and routes.dat) as pandas dataframes, and then filters their contents based on user input. The user inputs the name of a city, and the function then filters the airports database to only contain airports in the given city, and the routes database to only contain routes in which the source airports are located in the given city.
+
+The function then outputs two images: one contains a map of all the airports in the database in blue with the airports in the given city appearing in red, and the other image contains a world map with route lines from the source city in red.  The files are named airports_map.png and routes_map.png, and are sent to the website via an HTML POST request from app.py.
+
+
+# aps_per_continent_by_src.py
+
+A python file that outputs how many destinations a given source airport has to different continents.
+
+The input is the source airport's city.
+
+The output is a png picture that has a bar graph of all the continents and the number of occurances of each continent. 
+
+The code reads data from airport.dat, routes.dat and Countries-Continents.csv.
+It determines all the destinations from the source code, determies all the continents for each of those destinations (by determining the country from the airport.dat and finding the continent pair from Countries-Continents.csv) and sums up all the occurances of each continent into a designated variable.
+
+Pandas extension: helps to read databases in a convenient way.
+MatPlotLib extension: used to plot the graph
+
+
+# closest_furthest_cities.py
+
+The python file determines the closest and furthest airport to the given airport.
 
 The input is the source airport's unique OpenFlights ID.
 
@@ -22,18 +64,12 @@ Source ID: (ID)
 Closest city: (ID), distance (distance) kilometeres.
 Furthest city: (ID), distance (distance) kilometeres.
 
+
 The code determines the closest and furthest airport to the given source airport by first taking the first airport from the database, taking its longitude and latitude, calculating the distance between that and the source airport and making that distance as the base closest and furthest airport. After that the code goes line by line through the database (has about 6500 airports) and comparares each airport's distance to the base closest and furthest airport. The distance is calculated using great circle method that is precise enough for this application.
-
-# Mapping.py
-
-# database2graph.py
-This file defines a function that reads in two databases (airports.dat and routes.dat) as pandas dataframes, and then filters their contents based on user input. The user inputs the name of a city, and the function then filters the airports database to only contain airports in the given city, and the routes database to only contain routes in which the source airports are located in the given city.
-
-The function then outputs two images: one contains a map of all the airports in the database in blue with the airports in the given city appearing in red, and the other image contains a world map with route lines from the source city in red.  The files are named airports_map.png and routes_map.png, and are sent to the website via an HTML POST request from app.py.
 
 # Counting.py
 
-A python code that outputs all the airlines that depart from the given input source airport.
+A python file that outputs all the airlines that depart from the given input source airport.
 
 The input is the source airport's IATA code. 
 
@@ -44,27 +80,13 @@ Pandas extension: helps to read databases in a convenient way.
 MatPlotLib extension: used to plot the graph
 
 
-# City-to-destination.py
 
-A python code that outputs how many destinations a given source airport has to different continents.
-
-The input is the source airport's city.
-
-The output:
+# Mapping.py
+This file outputs all the destination airports for an input source city using CartoPy Python package.
 
 
-Number of destination airports in each continent: 
-North America: (int)
-South America: (int)
-Europe: (int)
-Asia: (int)
-Africa: (int)
-Oceania: (int)
 
-The code read data from airport.dat, routes.dat and Countries-Continents.csv.
-It determines all the destinations from the source code, determies all the continents for each of those destinations (by determining the country from the airport.dat and finding the continent pair from Countries-Continents.csv) and sums up all the occurances of each continent into a designated variable.
 
-Pandas extension: helps to read databases in a convenient way.
 
 
 # The syntax
@@ -103,18 +125,6 @@ Index 7: number of stopovers
 Index 8: aircraft type
 
 
-# Instruction on how to start the server:
-1. Clone the repository
-2. Open command line (terminal).
-Using command line:
-3. type "python --version" to check if you have python yet
-4. install flask by typing "pip install flask" (python server package)
-4. cd to the directory you cloned the repository
-5. type "python -m app" to start the localhost server. You can access the web app on http://127.0.0.1:5000
-To use Ngrok:
-6. start ngrok.exe
-7. type "ngrok http 5000"
-You will be able to reach your localhost on internet using the link Ngrok gives you
 
 
 
