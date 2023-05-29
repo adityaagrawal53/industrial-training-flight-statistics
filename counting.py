@@ -1,4 +1,6 @@
 import geopandas as gpd
+import matplotlib                                # Agg is a non-interactive backend that can only write to files
+matplotlib.use('agg')                            # Adding this for counting to run more than once
 import matplotlib.pyplot as plt
 import csv
 import numpy as np
@@ -24,6 +26,9 @@ def filter_and_count(source_airport):
        routes2 = routes[routes_filter].groupby(["airline"])["airline"].count().sort_values(ascending=False)
 
        routes2.plot(kind="bar")
+       print(routes_filter)
+       print('\n')
+       print(routes2)
 
        #Save as image
        plt.savefig('static/images/airport_count.png')
