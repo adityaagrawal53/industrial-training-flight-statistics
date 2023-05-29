@@ -1,13 +1,5 @@
 # Industrial Training Group 2
 
-Link for the flight map GitHub repository: https://github.com/zhangwengame/Python-Flight-Map
-
-Link for the OpenFlights website: https://openflights.org/data.html#airport
-
-Link for the OpenFlights Github: https://github.com/jpatokal/openflights
-
-Link for the OpenFlights Github (data): https://github.com/jpatokal/openflights/tree/master/data
-
 
 # Instruction on how to start the server:
 1. Clone the repository
@@ -38,6 +30,16 @@ The goal of this project was to make a website that takes a user input and outpu
 
 The airports.dat and routes.dat databases are from an open source database, OpenFlights that is linked in the beginning of the README file.
 
+# links
+
+Link for the flight map GitHub repository: https://github.com/zhangwengame/Python-Flight-Map
+
+Link for the OpenFlights website: https://openflights.org/data.html#airport
+
+Link for the OpenFlights Github: https://github.com/jpatokal/openflights
+
+Link for the OpenFlights Github (data): https://github.com/jpatokal/openflights/tree/master/data
+
 # app.py
 The file combines the listing and routing of different files and html domain names.
 It imports the following files to output the desired pictures / strings made by those files to the website.
@@ -55,7 +57,7 @@ It imports the following files to output the desired pictures / strings made by 
 It also uses flask to make a micronetwork.
 
 
-# database2graph.py / aps_listing_and_routing
+# aps_listing_and_routing
 
 This file defines a function that reads in two databases (airports.dat and routes.dat) as pandas dataframes, and then filters their contents based on user input. The user inputs the name of a city, and the function then filters the airports database to only contain airports in the given city, and the routes database to only contain routes in which the source airports are located in the given city.
 
@@ -114,9 +116,7 @@ This file outputs all the destination airports for an input source city using Ca
 
 
 
-
-
-# the syntax
+# the syntax of the databases
 **Use the airport database for the longitude, altitude and continent information!
 Example:**
 
