@@ -32,7 +32,7 @@ In an nutshell the repository does the following:
 1. ngrok.exe starts a local host server that can be accessed with an IPv4 adddress
 2. html files in the templates folder handle the visual appearance of the URL website
 3. static folder stores all the databases and png files made by the python files
-4. __pycache__ folder has all the cache information
+4. pycache folder has all the cache information
 3. each python file gets a source airport as an input and outputs a desired string, picture or a graph.
 4. app.py combines the listing and routing of different files and html domain names by using flask app routing.
 
