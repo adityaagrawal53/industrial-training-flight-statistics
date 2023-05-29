@@ -23,7 +23,8 @@ To use Ngrok:
 You will be able to reach your localhost on internet using the link Ngrok gives you
 
 # app.py
-The file combines the listing and routing of different files and html domain names. 
+- The file combines the listing and routing of different files and html domain names. 
+- dfsdfdsf
 
 It uses flask to make a micronetwork.
 
@@ -67,7 +68,7 @@ Furthest city: (ID), distance (distance) kilometeres.
 
 The code determines the closest and furthest airport to the given source airport by first taking the first airport from the database, taking its longitude and latitude, calculating the distance between that and the source airport and making that distance as the base closest and furthest airport. After that the code goes line by line through the database (has about 6500 airports) and comparares each airport's distance to the base closest and furthest airport. The distance is calculated using great circle method that is precise enough for this application.
 
-# Counting.py
+# counting.py
 
 A python file that outputs all the airlines that depart from the given input source airport.
 
@@ -81,7 +82,7 @@ MatPlotLib extension: used to plot the graph
 
 
 
-# Mapping.py
+# mapping.py
 This file outputs all the destination airports for an input source city using CartoPy Python package.
 
 
@@ -89,7 +90,7 @@ This file outputs all the destination airports for an input source city using Ca
 
 
 
-# The syntax
+# the syntax
 **Use the airport database for the longitude, altitude and continent information!
 Example:**
 
