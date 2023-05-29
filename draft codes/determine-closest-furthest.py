@@ -6,7 +6,7 @@ from math import radians, degrees, sin, cos, asin, acos, sqrt
 # closest_city = float, distance in kilometers
 # furthest_city = float, distance in kilometers
 
-def closest_furthest(source, ):
+def closest_furthest(source):
 
     latitudes = {}
     longitudes = {}
