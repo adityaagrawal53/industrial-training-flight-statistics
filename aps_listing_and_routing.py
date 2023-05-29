@@ -9,6 +9,7 @@ from shapely.geometry import LineString
 # import cartopy.crs as ccrs
 
 def funk(d):
+    plt.clf()
     # read airports
     airports = pd.read_csv("static/database/airports.dat", delimiter=',',
                            names=['id', 'name', 'city', 'country', 'iata',
