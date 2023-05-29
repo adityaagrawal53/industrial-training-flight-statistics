@@ -22,9 +22,25 @@ To use Ngrok:
 7. type "ngrok http 5000"
 You will be able to reach your localhost on internet using the link Ngrok gives you
 
+# introduction
+
+The goal of this project was to make a website that takes a user input and outputs graphs and data about flight route data, airlines, destination continents, closest and furthest airport. Mainly Python and HTML was used in this project. Python was used to handle the data and backend, and HTML to outline the website appearance and frontend.
+
+
+In an nutshell the repository does the following:
+
+1. ngrok.exe starts a local host server that can be accessed with an IPv4 adddress
+2. html files in the templates folder handle the visual appearance of the URL website
+3. static folder stores all the databases and png files made by the python files
+4. __pycache__ folder has all the cache information
+3. each python file gets a source airport as an input and outputs a desired string, picture or a graph.
+4. app.py combines the listing and routing of different files and html domain names by using flask app routing.
+
+The airports.dat and routes.dat databases are from an open source database, OpenFlights that is linked in the beginning of the README file.
+
 # app.py
 The file combines the listing and routing of different files and html domain names.
-It imports the following files to output the desired pictures / strings made by those files.
+It imports the following files to output the desired pictures / strings made by those files to the website.
 
 - aps_listing_and_routing.py
     - to output images of all the **routes** from a source city
