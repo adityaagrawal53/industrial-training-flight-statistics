@@ -23,33 +23,27 @@ To use Ngrok:
 You will be able to reach your localhost on internet using the link Ngrok gives you
 
 # app.py
-- The file combines the listing and routing of different files and html domain names. 
-- dfsdfdsf
+The file combines the listing and routing of different files and html domain names.
+It imports the following files to output the desired pictures / strings made by those files.
 
-It uses flask to make a micronetwork.
+- aps_listing_and_routing.py
+    - to output images of all the **routes** from a source city
+- closest_furthest_cities.py
+    - to print out the **closest and furthest** city from a source airport
+- aps_per_continent_by_src.py
+    - to output a graph of how many **destinations** a given source airport has to different continents
+- counting.py
+    - to output all the **airlines** that depart from the given input source airport.
 
-It imports closest_furthest_cities.py, aps_listing_and_routing, aps_per_continent_by_src.py and counting.py to output the desired pictures / strings made by those files.
+
+It also uses flask to make a micronetwork.
+
 
 # database2graph.py / aps_listing_and_routing
 
 This file defines a function that reads in two databases (airports.dat and routes.dat) as pandas dataframes, and then filters their contents based on user input. The user inputs the name of a city, and the function then filters the airports database to only contain airports in the given city, and the routes database to only contain routes in which the source airports are located in the given city.
 
 The function then outputs two images: one contains a map of all the airports in the database in blue with the airports in the given city appearing in red, and the other image contains a world map with route lines from the source city in red.  The files are named airports_map.png and routes_map.png, and are sent to the website via an HTML POST request from app.py.
-
-
-# aps_per_continent_by_src.py
-
-A python file that outputs how many destinations a given source airport has to different continents.
-
-The input is the source airport's city.
-
-The output is a png picture that has a bar graph of all the continents and the number of occurances of each continent. 
-
-The code reads data from airport.dat, routes.dat and Countries-Continents.csv.
-It determines all the destinations from the source code, determies all the continents for each of those destinations (by determining the country from the airport.dat and finding the continent pair from Countries-Continents.csv) and sums up all the occurances of each continent into a designated variable.
-
-Pandas extension: helps to read databases in a convenient way.
-MatPlotLib extension: used to plot the graph
 
 
 # closest_furthest_cities.py
@@ -67,6 +61,22 @@ Furthest city: (ID), distance (distance) kilometeres.
 
 
 The code determines the closest and furthest airport to the given source airport by first taking the first airport from the database, taking its longitude and latitude, calculating the distance between that and the source airport and making that distance as the base closest and furthest airport. After that the code goes line by line through the database (has about 6500 airports) and comparares each airport's distance to the base closest and furthest airport. The distance is calculated using great circle method that is precise enough for this application.
+
+
+# aps_per_continent_by_src.py
+
+A python file that outputs how many destinations a given source airport has to different continents.
+
+The input is the source airport's city.
+
+The output is a png picture that has a bar graph of all the continents and the number of occurances of each continent. 
+
+The code reads data from airport.dat, routes.dat and Countries-Continents.csv.
+It determines all the destinations from the source code, determies all the continents for each of those destinations (by determining the country from the airport.dat and finding the continent pair from Countries-Continents.csv) and sums up all the occurances of each continent into a designated variable.
+
+Pandas extension: helps to read databases in a convenient way.
+MatPlotLib extension: used to plot the graph
+
 
 # counting.py
 
