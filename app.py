@@ -1,6 +1,6 @@
 from flask import *
 from aps_listing_and_routing import funk
-from closest_furthest_cities import closest_furthest
+from closest_furthest_2 import closest_furthest
 from aps_per_continent_by_src import find_continent
 from counting import filter_and_count
 # from mapping import filter_and_map
@@ -29,12 +29,12 @@ def furthest_closest():
 
 @app.route('/furthest_closest/<id>')
 def furthest_closest_id(id):   
-   closest, furthest = closest_furthest(int(id))
+   source, closest, furthest = closest_furthest(int(id))
    closest_id = closest[0]
    closest_d = closest[1]
    furthest_id = furthest[0]
    furthest_d = furthest[1]
-   return render_template("furthest_closest.html", source=id, closest_id=closest_id, closest_d=closest_d,
+   return render_template("furthest_closest.html", source=source, closest_id=closest_id, closest_d=closest_d,
                            furthest_d=furthest_d, furthest_id=furthest_id)
    
 @app.route('/documentation.html')
