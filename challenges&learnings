@@ -1,0 +1,17 @@
+List of challenges and learnings from this project:
+
+Challenges:
+    -Completing sprint tasks within the given sprint; many tasks were too large and vague and lasted multiple sprints, or got delayed  due to problems with troubleshooting.
+    -Debugging files such as aps_per_continent_by_src.py; this file consistently ran into "KeyError" errors and several similar errors when attempting to apply filters to some of the dataframes.  The file also initially ran extremely slow (2 to 3 minutes, though this was reduced to around 2 to 3 seconds).
+    -Getting cartopy to work. We didn't get it working until close to the end of the project, and we had to use another app (Anaconda) to install it; even then, we couldn’t place the images generated in Anaconda onto the site. Installing it via PyCharm and via terminal didn't work, and would produce tons of cryptic errors.  
+    -Tweaking the maps produced by the funk() function found in aps_listing_and_routing.py.  Trying to add a world map image underneath the airport locations flipped the airport locations upside down and placed them all in the top left corner, though we ultimately got it to work under the route map.
+    -Different group members had different levels of experience with Python and with HTML, which posed some challenges with writing and debugging certain programs. 
+    -To describe an error in a way everyone understands. Some people worked on backend and some in frontend which meant that for example people from backend might not be familiar with a certain error in frontend and it took some time to figure out what was the problem if the problem affected both frontend and backend. This resulted in a slight amount of miscommunication.
+
+Learnings:
+    -Sprint tasks need to be relatively short and very specific, so that they can actually be completed within the sprint.
+    -Creating a functioning website isn’t that hard; it mostly consists of producing output with backend functions and sending them to the front end with POST requests.
+    -GitHub is a useful tool for managing projects online. 
+    -The documentation is just as useful to the creators as to the customers. 
+    -It’s important to know how to use certain skills (i.e. looping through dataframes, filtering them) in several different scenarios.  
+

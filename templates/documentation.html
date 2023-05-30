@@ -41,7 +41,7 @@
       </ul>
     </section>
     <section id="introduction" class="main-section">
-      <header>introduction</header>
+      <header>Introduction</header>
       <p>The goal of this project was to make a website that takes a user input and outputs graphs and data about flight route data, airlines, destination continents, closest and furthest airport. Mainly Python and HTML was used in this project. Python was used to handle the data and backend, and HTML to outline the website appearance and frontend.
       </p>
     </section>
@@ -56,7 +56,7 @@
       <p>The airports.dat and routes.dat databases are from an open source database, OpenFlights that is linked in the beginning of the README file.</p>      
     </section>
     <section id="links" class="main-section">
-      <header>links</header>
+      <header>Links</header>
       <p>To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code: </p>
       <code>function greetMe(yourName) { alert("Hello " + yourName); }</code>
       <br/>
@@ -73,7 +73,7 @@
       </ul>
     </section>
     <section id="app.py" class="main-section">
-      <header>app.py</header>
+      <header>Server file (app.py)</header>
       <p>The file combines the listing and routing of different files and html domain names.<p>
       <p>It imports the following files to output the desired pictures / strings made by those files to the website.</p>            
       <ul>
@@ -85,14 +85,14 @@
       <p>It also uses flask to make a micronetwork.</p>
     </section>
     <section id="aps_listing_and_routing" class="main-section">
-      <header>aps_listing_and_routing</header>
+      <header>Listing and routing</header>
       <p>This file defines a function that reads in two databases (airports.dat and routes.dat) as pandas dataframes, and then filters their contents based on user input. The user inputs the name of a city, and the function then filters the airports database to only contain airports in the given city, and the routes database to only contain routes in which the source airports are located in the given city.
       </p>
       <p>The function then outputs two images: one contains a map of all the airports in the database in blue with the airports in the given city appearing in red, and the other image contains a world map with route lines from the source city in red.  The files are named airports_map.png and routes_map.png, and are sent to the website via an HTML POST request from app.py.
       </p>
     </section>
     <section id="closest_furthest_2" class="main-section">
-      <header>closest_furthest_2</header>
+      <header>Closest-Furthest</header>
       <p>The python file determines the closest and furthest airport to the given airport.</p>
       <p>The input is the source airport's unique OpenFlights ID.</p>
       <p>The output:</p>
@@ -106,7 +106,7 @@
       </p>
     </section>
     <section id="aps_per_continent_by_src" class="main-section">
-      <header>aps_per_continent_by_src</header>
+      <header>Destinations from source airport by continent</header>
       <p>A python file that outputs how many destinations a given source airport has to different continents.
       </p>
       <p>The input is the source airport's city.
@@ -123,7 +123,7 @@
       </p>
     </section>
     <section id="counting" class="main-section">
-      <header>counting</header>
+      <header>Airlines counting</header>
       <p>A python file that outputs all the airlines that depart from the given input source airport.
       </p>
       <p>The input is the source airport's IATA code. 
@@ -136,12 +136,12 @@
       </p>
     </section>
     <section class="main-section" id="mapping">
-      <header>mapping</header>
+      <header>Mapping destination airports</header>
       <p>This file outputs all the destination airports for an input source city using CartoPy Python package.
       </p>
     </section>
     <section class="main-section" id="syntax">
-      <header>the syntax of the databases</header>
+      <header>The syntax of the databases</header>
       <p>**Use the airport database for the longitude, altitude and continent information!
       </p>
       <p>**507**,"London Heathrow Airport","London","United Kingdom","LHR","EGLL",**51.4706**,**-0.461941**,83,0,"E",**"Europe/London"**,"airport","OurAirports"
