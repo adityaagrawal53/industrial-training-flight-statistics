@@ -179,13 +179,13 @@ Index 8: aircraft type
 2. 420
 - Output as expected (Prints source airport name, and closest and farthest airports)
 3. 8008135 
-- Output as expected (Error message printed)
+- Output as expected (Error message printed because out of range)
 4. 50.4 
-- Output as expected (Error message printed)
+- Output as expected (Error message printed because the input is a float)
 5. -4 
-- Output as expected (Error message printed)
+- Output as expected (Error message printed because the input is negative)
 6. 5694
-- Output as expected (Error message printed)
+- Output as expected (Prints source airport name, and closest and farthest airports)
 **Pass rate : 100%**
 
 ## Airport per continent by source city
