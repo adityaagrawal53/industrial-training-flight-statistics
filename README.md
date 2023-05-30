@@ -30,9 +30,9 @@ The goal of this project was to make a website that takes a user input and outpu
 
 The airports.dat and routes.dat databases are from an open source database, OpenFlights that is linked in the beginning of the README file.
 
-# links
+# References
 
-The used the following websites to get information, databases or insiration.
+These websites were used to get information, databases or inspiration.
 
 
 Link for the OpenFlights website: https://openflights.org/data.html#airport
