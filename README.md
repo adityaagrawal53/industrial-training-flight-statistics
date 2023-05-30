@@ -7,11 +7,11 @@
 Using command line:
 3. type "python --version" to check if you have python yet
 4. install flask by typing "pip install flask" (python server package)
-5. cd to the directory you cloned the repository
-6. type "python -m app" to start the localhost server. You can access the web app on http://127.0.0.1:5000
+4. cd to the directory you cloned the repository
+5. type "python -m app" to start the localhost server. You can access the web app on http://127.0.0.1:5000
 To use Ngrok:
-7. start ngrok.exe
-8. type "ngrok http 5000"
+6. start ngrok.exe
+7. type "ngrok http 5000"
 You will be able to reach your localhost on internet using the link Ngrok gives you
 
 # introduction
@@ -25,8 +25,8 @@ The goal of this project was to make a website that takes a user input and outpu
 2. html files in the templates folder handle the visual appearance of the URL website
 3. static folder stores all the databases and png files made by the python files
 4. pycache folder has all the cache information
-5. each python file gets a source airport as an input and outputs a desired string, picture or a graph.
-6. app.py combines the listing and routing of different files and html domain names by using flask app routing.
+3. each python file gets a source airport as an input and outputs a desired string, picture or a graph.
+4. app.py combines the listing and routing of different files and html domain names by using flask app routing.
 
 The airports.dat and routes.dat databases are from an open source database, OpenFlights that is linked in the beginning of the README file.
 
@@ -155,9 +155,70 @@ Index 7: number of stopovers
 Index 8: aircraft type
 
 
+# Test cases 
 
+## Route listing :
 
+1. United States 
+- Output as expected (Pictures printed)
+2. Germany 
+- Output as expected (Pictures printed)
+3. Ethiopia
+- Output as expected (Pictures printed)
+4. India
+- Output as expected (Pictures printed)
+5. China 
+- Output as expected (Pictures printed)
+6. what 
+- Output as expected (Error message)
+**Pass rate : 100%** 
 
+## Furthest & Closest city to the airport
+1. 1 
+- Output as expected (Prints source airport name, and closest and farthest airports)
+2. 420
+- Output as expected (Prints source airport name, and closest and farthest airports)
+3. 8008135 
+- Output as expected (Error message printed)
+4. 50.4 
+- Output as expected (Error message printed)
+5. -4 
+- Output as expected (Error message printed)
+6. 5694
+- Output as expected (Error message printed)
+**Pass rate : 100%**
+
+## Airport per continent by source city
+
+1. Singapore
+- Output as expected (Chart printed)
+2. Munich 
+- Output as expected (Chart printed)
+3. Invalid
+- Output as expected (Empty chart printed)
+4. New York
+- Output as expected (Chart printed)
+5. 2342541
+- Output as expted (Empty chart printed)
+6. Hong Kong
+- Output as expected (Empty chart printed)
+**Pass rate : 100%**
+
+## List all airline for source airport
+
+1. SVX
+- Output as expected (Chart printed)
+2. SIN
+- Output as expected (Chart printed)
+3. AAA
+- Output as expected (Error message printed)
+4. DXB
+- Output as expected (Chart printed)
+5. ABCD
+- Output as expected (Error message printed)
+6. 123.5
+- Output as expected (Error message printed)
+**Pass rate : 100%**
 
 
 
