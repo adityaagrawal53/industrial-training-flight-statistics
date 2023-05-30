@@ -32,13 +32,16 @@ The airports.dat and routes.dat databases are from an open source database, Open
 
 # links
 
-Link for the flight map GitHub repository: https://github.com/zhangwengame/Python-Flight-Map
+The used the following websites to get information, databases or insiration.
+
 
 Link for the OpenFlights website: https://openflights.org/data.html#airport
 
 Link for the OpenFlights Github: https://github.com/jpatokal/openflights
 
 Link for the OpenFlights Github (data): https://github.com/jpatokal/openflights/tree/master/data
+
+Link for the flight map GitHub repository: https://github.com/zhangwengame/Python-Flight-Map
 
 # app.py
 The file combines the listing and routing of different files and html domain names.

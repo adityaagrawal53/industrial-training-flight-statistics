@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 # furthest_city = float, distance in kilometers
 
 def find_continent(source_city):
+    plt.clf()
     aps = pd.read_csv('static/database/airports.dat', delimiter=',',
                            names=['id', 'name', 'city', 'country', 'iata',
                                   'icao', 'lat', 'long', 'altitude', 'timezone',
