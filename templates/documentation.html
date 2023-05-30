@@ -23,9 +23,48 @@
       </ul>
     </nav>
   <main id="main-doc">
+    <header>Industrial Training Group 2</header>
     <section id="Introduction" class="main-section">
-      <header>Introduction</header>      
-      <p>References</p>
+      <header>Instruction on how to start the server:</header>  
+      <ul>
+        <li>Clone the repository</li>
+        <li>Open command line (terminal).</li>
+        <p>Using command line:</p>
+        <li>3. type "python --version" to check if you have python yet</li>
+        <li>4. install flask by typing "pip install flask" (python server package)</li>
+        <li>5. cd to the directory you cloned the repository</li>
+        <li>6. type "python -m app" to start the localhost server. You can access the web app on http://127.0.0.1:5000</li>
+        <p>To use Ngrok:</p>
+        <li>7. start ngrok.exe</li>
+        <li>8. type "ngrok http 5000"</li>
+        <p>You will be able to reach your localhost on internet using the link Ngrok gives you</p>
+      </ul>
+    </section>
+    <section id="introduction" class="main-section">
+      <header>introduction</header>
+      <p>The goal of this project was to make a website that takes a user input and outputs graphs and data about flight route data, airlines, destination continents, closest and furthest airport. Mainly Python and HTML was used in this project. Python was used to handle the data and backend, and HTML to outline the website appearance and frontend.
+      </p>
+    </section>
+    <section id="nutshell" class="main-section">
+      <header>In an nutshell the repository does the following:</header>
+      <p>1. ngrok.exe starts a local host server that can be accessed with an IPv4 adddress</p>
+      <p>2. html files in the templates folder handle the visual appearance of the URL website</p>
+      <p>3. static folder stores all the databases and png files made by the python files</p>
+      <p>4. pycache folder has all the cache information</p>
+      <p>5. each python file gets a source airport as an input and outputs a desired string, picture or a graph.</p>
+      <p>6. app.py combines the listing and routing of different files and html domain names by using flask app routing.</p>      
+      <p>The airports.dat and routes.dat databases are from an open source database, OpenFlights that is linked in the beginning of the README file.</p>      
+    </section>
+    <section id="links" class="main-section">
+      <header>links</header>
+      <p>To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code: </p>
+      <code>function greetMe(yourName) { alert("Hello " + yourName); }</code>
+      <br/>
+      <code>greetMe("World");</code>
+      <p>Select the code in the pad and hit Ctrl+R to watch it unfold in your browser! </p>
+    </section>
+    <section id="References" class="main-section">      
+      <header>References</header>
       <ul>
         <li>Link for the flight map GitHub repository: <a target="_blank">https://github.com/zhangwengame/Python-Flight-Map</a></li>
         <li>Link for the OpenFlights website: <a target="_blank">https://openflights.org/data.html#airport</a></li>
@@ -33,47 +72,108 @@
         <li>Link for the OpenFlights Github (data): <a target="_blank">https://github.com/jpatokal/openflights/tree/master/data</a></li>
       </ul>
     </section>
-    <section id="What_you_should_already_know" class="main-section">
-      <header>What you should already know</header>
-      <p>This guide assumes you have the following basic background:</p>
+    <section id="app.py" class="main-section">
+      <header>app.py</header>
+      <p>The file combines the listing and routing of different files and html domain names.<p>
+      <p>It imports the following files to output the desired pictures / strings made by those files to the website.</p>            
       <ul>
-        <li> A general understanding of the Internet and the World Wide Web (WWW). </li>
-        <li>Good working knowledge of HyperText Markup Language (HTML).</li>
-        <li> Some programming experience. If you are new to programming, try one of the tutorials linked on the main page about JavaScript. </li>
+        <li>aps_listing_and_routing.py: to output images of all the **routes** from a source city</li>
+        <li>closest_furthest_cities.py: to print out the **closest and furthest** city from a source airport</li>
+        <li>aps_per_continent_by_src.py: to output a graph of how many **destinations** a given source airport has to different continents</li>
+        <li>counting.py: to output all the **airlines** that depart from the given input source airport.</li>
       </ul>
+      <p>It also uses flask to make a micronetwork.</p>
     </section>
-    <section id="JavaScript_and_Java" class="main-section">
-      <header>JavaScript and Java</header>
-      <p>JavaScript and Java are similar in some ways but fundamentally different in some others. The JavaScript language resembles Java but does not have Java's static typing and strong type checking. JavaScript follows most Java expression syntax, naming conventions and basic control-flow constructs which was the reason why it was renamed from LiveScript to JavaScript. </p>
-      <p>In contrast to Java's compile-time system of classes built by declarations, JavaScript supports a runtime system based on a small number of data types representing numeric, Boolean, and string values. JavaScript has a prototype-based object model instead of the more common class-based object model. The prototype-based model provides dynamic inheritance; that is, what is inherited can vary for individual objects. JavaScript also supports functions without any special declarative requirements. Functions can be properties of objects, executing as loosely typed methods. </p>
-      <p>JavaScript is a very free-form language compared to Java. You do not have to declare all variables, classes, and methods. You do not have to be concerned with whether methods are public, private, or protected, and you do not have to implement interfaces. Variables, parameters, and function return types are not explicitly typed. </p>
+    <section id="aps_listing_and_routing" class="main-section">
+      <header>aps_listing_and_routing</header>
+      <p>This file defines a function that reads in two databases (airports.dat and routes.dat) as pandas dataframes, and then filters their contents based on user input. The user inputs the name of a city, and the function then filters the airports database to only contain airports in the given city, and the routes database to only contain routes in which the source airports are located in the given city.
+      </p>
+      <p>The function then outputs two images: one contains a map of all the airports in the database in blue with the airports in the given city appearing in red, and the other image contains a world map with route lines from the source city in red.  The files are named airports_map.png and routes_map.png, and are sent to the website via an HTML POST request from app.py.
+      </p>
     </section>
-    <section id="Hello_world" class="main-section">
-      <header>Hello world</header>
-      <p>To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code: </p>
-      <code>function greetMe(yourName) { alert("Hello " + yourName); }</code>
-      <br/>
-      <code>greetMe("World");</code>
-      <p>Select the code in the pad and hit Ctrl+R to watch it unfold in your browser! </p>
+    <section id="closest_furthest_cities" class="main-section">
+      <header>closest_furthest_cities</header>
+      <p>The python file determines the closest and furthest airport to the given airport.</p>
+      <p>The input is the source airport's unique OpenFlights ID.</p>
+      <p>The output:</p>
+      <p>Source ID: (ID)
+      </p>
+      <p>Closest city: (ID), distance (distance) kilometeres.
+      </p>
+      <p>Furthest city: (ID), distance (distance) kilometeres.
+      </p>
+      <p>The code determines the closest and furthest airport to the given source airport by first taking the first airport from the database, taking its longitude and latitude, calculating the distance between that and the source airport and making that distance as the base closest and furthest airport. After that the code goes line by line through the database (has about 6500 airports) and comparares each airport's distance to the base closest and furthest airport. The distance is calculated using great circle method that is precise enough for this application.
+      </p>
     </section>
-    <section id="Variables" class="main-section">
-      <header>Variables</header>
-      <p>You use variables as symbolic names for values in your application. The names of variables, called identifiers, conform to certain rules. <p>
-        <p> A JavaScript identifier must start with a letter, underscore (_), or dollar sign ($); subsequent characters can also be digits (0-9). Because JavaScript is case sensitive, letters include the characters "A" through "Z" (uppercase) and the characters "a" through "z" (lowercase). </p>
-        <p> You can use ISO 8859-1 or Unicode letters such as å and ü in identifiers. You can also use the Unicode escape sequences as characters in identifiers. Some examples of legal names are Number_hits, temp99, and _name. </p>
+    <section id="aps_per_continent_by_src" class="main-section">
+      <header>aps_per_continent_by_src</header>
+      <p>A python file that outputs how many destinations a given source airport has to different continents.
+      </p>
+      <p>The input is the source airport's city.
+      </p>
+      <p>The output is a png picture that has a bar graph of all the continents and the number of occurances of each continent. 
+      </p>
+      <p>The code reads data from airport.dat, routes.dat and Countries-Continents.csv.
+      </p>
+      <p>It determines all the destinations from the source code, determies all the continents for each of those destinations (by determining the country from the airport.dat and finding the continent pair from Countries-Continents.csv) and sums up all the occurances of each continent into a designated variable.
+      </p>
+      <p>Pandas extension: helps to read databases in a convenient way.
+      </p>
+      <p>MatPlotLib extension: used to plot the graph
+      </p>
     </section>
-    <section id="Declaring_variables" class="main-section">
-      <header>Declaring variables</header>
-      <p> You can declare a variable in three ways: </p>
-      <p> With the keyword var. For example, </p>
-      <code>var x = 42.</code>
-      <p> This syntax can be used to declare both local and global variables. </p>
-      <p> By simply assigning it a value. For example, </p>
-      <code>x = 42.</code>
-      <p> This always declares a global variable. It generates a strict JavaScript warning. You shouldn't use this variant. </p>
-      <p> With the keyword let. For example,</p>
-      <code> let y = 13.</code>
-      <p> This syntax can be used to declare a block scope local variable. See Variable scope below. </p>
+    <section id="counting" class="main-section">
+      <header>counting</header>
+      <p>A python file that outputs all the airlines that depart from the given input source airport.
+      </p>
+      <p>The input is the source airport's IATA code. 
+      </p>
+      <p>The output is a bar graph that has all the airlines that depart from the source airport. The more departures a specific airline has, the higher the bar in the graph.
+      </p>
+      <p>Pandas extension: helps to read databases in a convenient way.
+      </p>
+      <p>MatPlotLib extension: used to plot the graph
+      </p>
+    </section>
+    <section class="main-section" id="mapping">
+      <header>mapping</header>
+      <p>This file outputs all the destination airports for an input source city using CartoPy Python package.
+      </p>
+    </section>
+    <section class="main-section" id="syntax">
+      <header>the syntax of the databases</header>
+      <p>**Use the airport database for the longitude, altitude and continent information!
+      </p>
+      <p>**507**,"London Heathrow Airport","London","United Kingdom","LHR","EGLL",**51.4706**,**-0.461941**,83,0,"E",**"Europe/London"**,"airport","OurAirports"
+      </p>
+      <p>Use the following:
+      </p>
+      <ul>
+        <li>Index 0: Airport ID
+        </li>
+        <li>Index 6: Latitude
+        </li>
+        <li>Index 7: Longitude
+        </li>
+        <li>Index 11: Timezone. Can be used to determine the continent 
+        </li>
+      </ul>
+      <p>**Use the route data database for the route information, aircraft type and stop over number! Example:**
+      </p>
+      <p>BA,1355,SIN,**3316**,LHR,**507**,,**0**,**744**
+      </p>
+      <p>Use the following:
+      </p>
+      <ul>
+        <li>Index 3: departure airport ID
+        </li>
+        <li>Index 5: arrival airport ID
+        </li>
+        <li>Index 7: number of stopovers
+        </li>
+        <li>Index 8: aircraft type
+        </li>
+      </ul>
     </section>
   </main>
   </body>
