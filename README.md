@@ -7,11 +7,11 @@
 Using command line:
 3. type "python --version" to check if you have python yet
 4. install flask by typing "pip install flask" (python server package)
-4. cd to the directory you cloned the repository
-5. type "python -m app" to start the localhost server. You can access the web app on http://127.0.0.1:5000
+5. cd to the directory you cloned the repository
+6. type "python -m app" to start the localhost server. You can access the web app on http://127.0.0.1:5000
 To use Ngrok:
-6. start ngrok.exe
-7. type "ngrok http 5000"
+7. start ngrok.exe
+8. type "ngrok http 5000"
 You will be able to reach your localhost on internet using the link Ngrok gives you
 
 # introduction
@@ -25,8 +25,8 @@ The goal of this project was to make a website that takes a user input and outpu
 2. html files in the templates folder handle the visual appearance of the URL website
 3. static folder stores all the databases and png files made by the python files
 4. pycache folder has all the cache information
-3. each python file gets a source airport as an input and outputs a desired string, picture or a graph.
-4. app.py combines the listing and routing of different files and html domain names by using flask app routing.
+5. each python file gets a source airport as an input and outputs a desired string, picture or a graph.
+6. app.py combines the listing and routing of different files and html domain names by using flask app routing.
 
 The airports.dat and routes.dat databases are from an open source database, OpenFlights that is linked in the beginning of the README file.
 
