@@ -41,7 +41,7 @@ def furthest_closest_id(id):
 def documentation():
    return render_template('documentation.html')
 
-@app.route('/survey.html')
+@app.route('/survey.html', methods=["POST", "GET"])
 def survey():
    return render_template('survey.html')
 
